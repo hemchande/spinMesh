@@ -1,0 +1,52 @@
+services:
+  - type: web
+    name: mesh-socket-server
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn -k eventlet -w 1 mainApp:app --bind 0.0.0.0:8000
+    plan: free
+    envVars:
+      - key: REDIS_URL
+        value: rediss://red-d1es52fdiees73crkc6g:3ie0gE6r6y3W9lpBOPrHMs329Z4lGkcN@oregon-keyvalue.render.com:6379
+
+  - type: worker
+    name: mesh-worker1
+    env: python
+    buildCommand: ""
+    startCommand: rq worker default
+    plan: free
+    envVars:
+      - key: REDIS_URL
+        value: rediss://red-d1es52fdiees73crkc6g:3ie0gE6r6y3W9lpBOPrHMs329Z4lGkcN@oregon-keyvalue.render.com:6379
+
+  - type: worker
+    name: mesh-worker2
+    env: python
+    buildCommand: ""
+    startCommand: rq worker default
+    plan: free
+    envVars:
+      - key: REDIS_URL
+        value: rediss://red-d1es52fdiees73crkc6g:3ie0gE6r6y3W9lpBOPrHMs329Z4lGkcN@oregon-keyvalue.render.com:6379
+
+
+  - type: worker
+    name: mesh-worker3
+    env: python
+    buildCommand: ""
+    startCommand: rq worker default
+    plan: free
+    envVars:
+      - key: REDIS_URL
+        value: rediss://red-d1es52fdiees73crkc6g:3ie0gE6r6y3W9lpBOPrHMs329Z4lGkcN@oregon-keyvalue.render.com:6379
+
+
+  - type: worker
+    name: mesh-worker4
+    env: python
+    buildCommand: ""
+    startCommand: rq worker default
+    plan: free
+    envVars:
+      - key: REDIS_URL
+        value: rediss://red-d1es52fdiees73crkc6g:3ie0gE6r6y3W9lpBOPrHMs329Z4lGkcN@oregon-keyvalue.render.com:6379
