@@ -1,3 +1,5 @@
+setuptools>=65.0
+wheel>=0.38
 absl-py==2.3.0
 async-timeout==5.0.1
 bidict==0.23.1
