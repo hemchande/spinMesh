@@ -23,7 +23,7 @@ redis_url = "rediss://red-d1es52fdiees73crkc6g:3ie0gE6r6y3W9lpBOPrHMs329Z4lGkcN@
 redis_conn_NEW = Redis.from_url(redis_url)
 socketio = SocketIO(app, cors_allowed_origins="*",message_queue="redis://127.0.0.1:6379")
 redis_conn = Redis(host="127.0.0.1", port=6379)
-job_queue = Queue(connection=redis_conn)
+job_queue = Queue(connection=redis_conn_NEW)
 
 # Store client sid to send result later
 connected_clients = {}
