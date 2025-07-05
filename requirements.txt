@@ -70,6 +70,7 @@ smplx==0.1.28
 supervisor==4.2.5
 sympy==1.13.3
 tensorboard-data-server==0.7.2
+tensorboard==2.14.0
 tifffile==2023.7.10
 torch==2.2.2
 torchvision==0.17.2
